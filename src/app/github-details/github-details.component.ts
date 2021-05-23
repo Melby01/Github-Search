@@ -1,5 +1,5 @@
 import { Component, OnInit,  OnDestroy } from '@angular/core';
-import {  GithubService} from '../github-service';
+import {  GithubService} from './github-service';
  
 import { User } from "./user";
 import { Repository } from "./../repo";
@@ -11,23 +11,23 @@ import { Repository } from "./../repo";
 })
 export class GithubDetailsComponent implements OnInit, OnDestroy {
   users:User;
-  repo:Repository;
+  repo!: Repository;
   
   constructor(private myServiceRepo: GithubService){
   
   }
 
-  getUser(username){
+  getUser(username: string){
         this.myServiceRepo.getUser(username).then(
-                (success)=>{
-                 this.user=this.myServiceRepo.user;
-                              },(error )=>{
+                (_success: any)=>{
+                 this.users=this.myServiceRepo.user;
+                              },(error: any )=>{
                                 console.log(error)})
                                 
         this.myServiceRepo.getRepos(username).then(
-                (success)=>{
+                (_success: any)=>{
                 this.repo=this.myServiceRepo.repo;
-                            },(error)=>{
+                            },(error: any)=>{
                               console.log(error)})
 }
 
