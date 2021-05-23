@@ -1,15 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  OnDestroy } from '@angular/core';
+import {  GithubReposService} from '../github-repos.service';
+import { Subscription } from 'rxjs';
+import { User } from "./../user";
+import { Repository } from "./../repository";
 
 @Component({
-  selector: 'app-github-details',
-  templateUrl: './github-details.component.html',
-  styleUrls: ['./github-details.component.css']
+  selector: 'app-github-repos',
+  templateUrl: './github-repos.component.html',
+  styleUrls: ['./github-repos.component.css']
 })
-export class GithubDetailsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+export class GithubReposComponent implements OnInit, OnDestroy {
+  user:User;
+  repo:Repository;
+  
+  constructor(private myServiceRepo: GithubReposService){
+  
   }
 
+  getUser(username){
+        this.myServiceRepo.getUser(username).then(
+                (success)=>{
+                 this.user=this.myServiceRepo.user;
+                              },(error)=>{
+                                console.log(error)})
+                                
+        this.myServiceRepo.getRepos(username).then(
+                (success)=>{
+                this.repo=this.myServiceRepo.repo;
+                            },(error)=>{
+                              console.log(error)})
 }
+
+  ngOnDestroy(): void {
+   
+  }
+  ngOnInit(): void {
+    this.getUser("melby");
+  }
+ 
+}
+
+  
