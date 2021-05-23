@@ -1,7 +1,7 @@
 import { Component, OnInit,  OnDestroy } from '@angular/core';
 import {  GithubReposService} from '../github-repos.service';
  
-import { Users } from "./../user";
+import { User } from "./user";
 import { Repository } from "./../repository";
 
 @Component({
@@ -10,7 +10,7 @@ import { Repository } from "./../repository";
   styleUrls: ['./github-repos.component.css']
 })
 export class GithubReposComponent implements OnInit, OnDestroy {
-  users:Users;
+  users:User;
   repo:Repository;
   
   constructor(private myServiceRepo: GithubReposService){
