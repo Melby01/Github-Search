@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { GithubFormComponent } from './github-form/github-form.component';
 import { GithubDetailsComponent } from './github-details/github-details.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { DateCountPipe } from './date-count.pipe'
+import { DateCountPipe } from './date-count.pipe';
+import { Repository } from './repo';
 import { from } from 'rxjs';
 
 @NgModule({
@@ -15,7 +16,8 @@ import { from } from 'rxjs';
     GithubFormComponent,
     GithubDetailsComponent,
     NavbarComponent,
-    DateCountPipe
+    DateCountPipe,
+    Repository
   ],
   imports: [
     BrowserModule,
