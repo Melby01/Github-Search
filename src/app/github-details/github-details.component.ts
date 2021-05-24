@@ -1,5 +1,5 @@
 import { Component, OnInit,  OnDestroy } from '@angular/core';
-import {  GithubService} from './github-service';
+import {  GithubService} from './github-services';
  
 import { User } from "./user";
 import { Repository } from "./../repo";
