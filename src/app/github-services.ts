@@ -2,17 +2,17 @@ import { environment } from './../environments/environment.prod';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from './../app/user';
-import { Repository } from './repo';
+import { repo } from './repo';
 
 @Injectable({
   providedIn: 'root',
 })
 export class GithubService {
   user: User;
-  repo: Repository;
+  repo: repo;
   constructor(public http: HttpClient) {
     this.user = new User('', '', '', '', '', 0, 0, new Date(), 0, '', '');
-    this.repo = new Repository('', '', '', new Date());
+    this.repo = new repo('', '', '', new Date());
   }
   getUser(username: string) {
     interface ApiResponse {
@@ -29,7 +29,7 @@ export class GithubService {
       email: string;
     }
 
-    let promise = new Promise((resolve, reject) => {
+    let promise = new Promise<void>((resolve, reject) => {
       this.http
         .get<ApiResponse>(
           'https://api.github.com/users/' +
@@ -60,7 +60,7 @@ export class GithubService {
       created_at: Date;
     }
 
-    let promise = new Promise((resolve, reject) => {
+    let promise = new Promise<void>((resolve, reject) => {
       this.http
         .get<ApiResponse>(
           'https://api.github.com/users/' +

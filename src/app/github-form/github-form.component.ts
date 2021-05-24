@@ -7,7 +7,7 @@ import { User } from '../user';
   styleUrls: ['./github-form.component.css']
 })
 export class GithubFormComponent implements OnInit {
-  getUser: string 
+  getUser: string | undefined 
   @Output() addSearch = new EventEmitter<any>();
 
   constructor() { }
