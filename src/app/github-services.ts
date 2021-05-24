@@ -33,9 +33,9 @@ export class GithubService {
       this.http
         .get<ApiResponse>(
           'https://api.github.com/users/' +
-            username +
-            '?access_token=' +
-            environment.apiKey
+          username +
+          '?access_token=' +
+          environment.apiKey
         )
         .toPromise()
         .then(
@@ -64,9 +64,9 @@ export class GithubService {
       this.http
         .get<ApiResponse>(
           'https://api.github.com/users/' +
-            username +
-            '/repos?access_token=' +
-            environment.apiKey
+          username +
+          '/repos?access_token=' +
+          environment.apiKey
         )
         .toPromise()
         .then(

@@ -17,8 +17,8 @@ import { DateCountPipe } from './date-count.pipe';
     GithubFormComponent,
    // GithubDetailsComponent,
     NavbarComponent,
-    DateCountPipe,
-    //repo
+    DateCountPipe
+    //repo,
     //GithubService
   ],
   imports: [
