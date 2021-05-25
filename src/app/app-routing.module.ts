@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {  repo } from './repo';
+import { GithubDetailsComponent } from './github-details/github-details.component';
+import { NavbarComponent} from './navbar/navbar.component';
 const routes: Routes = [
-  { path: 'github-details ', component:  repo  },
+  { path: 'github-details ', component:  GithubDetailsComponent  },
+  
   { path: '', redirectTo: "/github-details", pathMatch:"full"},
 
 ];

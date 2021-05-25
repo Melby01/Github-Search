@@ -37,7 +37,7 @@ export class GithubDetailsComponent implements OnInit, OnDestroy {
 
   }
   ngOnInit(): void {
-    this.getUser("melby");
+    this.getUser("Melby01");
   }
 
 }
